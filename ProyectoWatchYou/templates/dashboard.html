@@ -15,10 +15,11 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{% static 'js/funciones.js' %}" ></script>
     
     <title>Dashboard</title>
 </head>
-<body>
+<body onload="crearGrafico()" >
     <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
       
     <div id="containers">
@@ -42,7 +43,7 @@
                 <div id="canvas" >
                     <canvas class="white" id="myChart"></canvas>
                 </div>
-                <script>
+                <!-- <script>
                     const data = {
                     labels: [
                         'FAIL',
@@ -71,7 +72,7 @@
                     );
 
                     
-                </script>
+                </script> -->
                 <!-- <img id="grafico" src="{% static 'img/grafico.png' %}" alt="imagen grafico"> -->
 
 

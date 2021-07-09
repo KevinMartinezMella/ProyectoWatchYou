@@ -1,56 +1,41 @@
-// Radialize the colors
-Highcharts.setOptions({
-  colors: Highcharts.map(Highcharts.getOptions().colors, function (color) {
-      return {
-          radialGradient: {
-              cx: 0.5,
-              cy: 0.3,
-              r: 0.7
-          },
-          stops: [
-              [0, color],
-              [1, Highcharts.color(color).brighten(-0.3).get('rgb')] // darken
-          ]
-      };
-  })
-});
+const data = {
+    labels: [
+        'FAIL',
+        'OK',
+        'WARNING'
+    ], 
+    datasets: [{
+        label: 'My First Dataset',
+        data: cargarDatos(),
+        backgroundColor: [
+        'rgb(255, 34, 36)'/*rojo*/,
+        'rgb(54, 162, 85)'/*azul*/,
+        'rgb(255, 205, 86)',
+        'rgb(155, 20, 86)',
+        'rgb(175, 205, 20)'
 
-// Build the chart
-Highcharts.chart('container', {
-  chart: {
-      plotBackgroundColor: null,
-      plotBorderWidth: null,
-      plotShadow: false,
-      type: 'pie'
-  },
-  title: {
-      text: 'Browser market shares in January, 2018'
-  },
-  tooltip: {
-      pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-  },
-  accessibility: {
-      point: {
-          valueSuffix: '%'
-      }
-  },
-  plotOptions: {
-      pie: {
-          allowPointSelect: true,
-          cursor: 'pointer',
-          dataLabels: {
-              enabled: true,
-              format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-              connectorColor: 'silver'
-          }
-      }
-  },
-  series: [{
-      name: 'Share',
-      data: [
-          { name: 'Chrome', y: 61.41 },
-          { name: 'Safari', y: 4.18 },
-          { name: 'Other', y: 7.05 }
-      ]
-  }]
-});
+
+        ],
+        hoverOffset: 4
+    }]
+    };
+    const config = {
+        type: 'pie',
+        data: data,
+    };
+
+
+function crearGrafico(){                                                    
+    var myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+}
+function cargarDatos(arr){
+    datos = [];
+    // for(let i = 0; i < arr.lenght; i++){
+        for(let i = 0; i < 5; i++){
+            datos.push(Math.floor(Math.random() *10))
+    }
+    return datos;
+}
