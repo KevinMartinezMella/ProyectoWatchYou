@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/stilo.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <title>Dashboard</title>
+</head>
+<body>
+    <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
+      
+    <div id="containers">
+        <img id="logo" src="{% static 'img/WatchU bluedark.png' %}">
+        <div class="inline" id="enlaces">
+            <a id="dashboard" class="inline menu" href="/dashboard">DASHBOARD</a>
+            <a class="inline menu left" href="/devices">DEVICES</a>
+            <span class="inline menu left dropdown-toggle" data-toggle="dropdown" id="spanusuario">USER</span>
+            <div class="dropdown-menu menu_box" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">PROFILE</a>
+                <a class="dropdown-item" href="#">SETTINGS</a>
+                <a class="dropdown-item" href="/">LOG OUT</a>
+            </div>
+        </div>
+        <div id="titulo">
+            <h1>DEVICE STATUS</h1>
+        </div>
+        <div id="menu">
+            <div id="noname" class="inline white">
+                <h2 class="white">Server Chart:</h2>
+                <div id="canvas" >
+                    <canvas class="white" id="myChart"></canvas>
+                </div>
+                <script>
+                    const data = {
+                    labels: [
+                        'FAIL',
+                        'OK',
+                        'WARNING'
+                    ], 
+                    datasets: [{
+                        label: 'My First Dataset',
+                        data: [2, 2, 1],
+                        backgroundColor: [
+                        'rgb(255, 34, 36)'/*rojo*/,
+                        'rgb(54, 162, 85)'/*azul*/,
+                        'rgb(255, 205, 86)'
+                        ],
+                        hoverOffset: 4
+                    }]
+                    };
+                    const config = {
+                        type: 'pie',
+                        data: data,
+                    };
+                                                                    
+                    var myChart = new Chart(
+                      document.getElementById('myChart'),
+                      config
+                    );
+
+                    
+                </script>
+                <!-- <img id="grafico" src="{% static 'img/grafico.png' %}" alt="imagen grafico"> -->
+
+
+                <!-- <div id="datos" class="inline gcolors">
+                    <div class="colores inline" id="rojo"></div>
+                    <span class="span">FAIL</span>
+                    <div class="colores inline" id="amarillo"></div>
+                    <span class="span" >WARNING</span>
+                    <div class="colores inline" id="verde"></div>
+                    <span class="span" >OK</span>
+                </div> -->
+            </div>
+            <div id="alarmas" class="inline">
+                <h2>Alerts:</h2>
+                <table id="tabla" class="table">
+                    <tr>
+                        <th class="white fuente">Server's name</th>
+                        <th class="white td fuente">Status</th>
+                    </tr>
+                    <tr>
+                        <td class="white">0_server_name_test</td>
+                        <td class="white">FAIL</td>
+                    </tr>
+                    <tr>
+                        <td class="white">1_server_name_test</td>
+                        <td class="white">FAIL</td>
+                    </tr>
+                    <tr>
+                        <td class="white">2_server_name_test</td>
+                        <td class="white">WARNING</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="footer" class="white">
+            <span id="p" class="white">WatchYou 2021 ®</span>
+        </div>
+    </div>
+</body>
+</html>

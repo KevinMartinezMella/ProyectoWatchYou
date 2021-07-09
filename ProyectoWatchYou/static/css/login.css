@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+body{
+    background: url('../img/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+h3{
+    text-align: center;
+    margin-top: 10%;
+}
+img{
+    width: 20%;
+    margin-top: 2%;
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+#login{
+    border: solid 1px black;
+    background-color: #0d1d2c;
+    width: 40%;
+    height: 400px;
+    border-radius: 20px;
+}
+#login label,input{
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 1%;
+}
+#sub{
+    margin-top: 10%;
+    color: white;
+    border-radius: 10px;
+    background-color: red;
+    width: 40%;
+    margin-left: 30%;
+}
+.input{
+    padding: 10px;
+    border-radius: 10px;
+}

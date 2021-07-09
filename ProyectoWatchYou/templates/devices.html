@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/stilo.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <title>Devices</title>
+</head>
+<body>
+    <div id="containers">
+        <img id="logo" src="{% static 'img/WatchU bluedark.png' %}">
+        <div class="inline" id="enlaces">
+            <a id="dashboard" class="inline menu" href="/dashboard">DASHBOARD</a>
+            <a class="inline menu left" href="/devices">DEVICES</a>
+            <!-- <span class="inline menu left">USUARIO</span> -->
+            <span class="inline menu left dropdown-toggle" data-toggle="dropdown" id="spanusuario">USER</span>
+            <div class="dropdown-menu menu_box" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">PROFILE</a>
+                <a class="dropdown-item" href="#">SETTINGS</a>
+                <a class="dropdown-item" href="/">LOG OUT</a>
+            </div>
+        </div>
+        <div id="titulo">
+            <h1>DEVICES</h1>
+        </div>
+        <div id="menu">
+            <h2 class="white inline">ADMIN</h2>
+            <ul id="ul" class="inline white">
+                <li class=" white inline">
+                    <!-- <a class="li" href="#"> Add Devices</a> -->
+                    <button type="button" class="li" data-toggle="modal" data-target="#exampleModal">
+                        Add Devices
+                    </button>
+                      
+                      <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Device</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <input class="input" type="text" name="servidor" placeholder="Server name">
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn color">Add Device</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </li>
+                <li class=" white inline" >
+                    <!-- <a class="li" href="#"> Schedule Test </a> -->
+                    <button type="button" class="li" data-toggle="modal" data-target="#exampleModal1">
+                        Schedule Test
+                      </button>
+                      
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Schedule Test</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <form action="" method="POST">
+                                  {% csrf_token %}
+                                  <ul>
+                                    <select class="input espacio" name="select">
+                                        <option selected>Select server</option>
+                                        <option>0_server_name_test</option>
+                                        <option>1_server_name_test</option>
+                                        <option>2_server_name_test</option>
+                                        <option>3_server_name_test</option>
+                                        <option>4_server_name_test</option>
+                                    </select>
+                                    <li class="espacio" ><input class="input" type="date" name="fecha"></li>
+                                    <li class="espacio" ><input class="input" type="time" name="hora"></li>
+                                  </ul>
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                              <button type="submit" class="btn color">Schedule Test</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+                <li class=" white inline" >
+                    <!-- <a class="li" href="#"> Test Device </a>  -->
+                    <button type="button" class="li" data-toggle="modal" data-target="#exampleModal2">
+                        Test Device
+                      </button>
+                      
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Test Device </h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <form action="" method="POST">
+                                  {% csrf_token %}
+                                  
+                                    <select class="input espacio" name="select">
+                                        <option selected>Select server</option>
+                                        <option>0_server_name_test</option>
+                                        <option>1_server_name_test</option>
+                                        <option>2_server_name_test</option>
+                                        <option>3_server_name_test</option>
+                                        <option>4_server_name_test</option>
+                                    </select>
+                                    
+                              </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                              <button type="submit" class="btn color">Test Device</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </li>
+            </ul>
+            <div id="tabladevice">
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th class="back" scope="col">Device List</th>
+                        <th class="back" scope="col">Last Test</th>
+                        <th class="back" scope="col">Status Test</th>
+                        <th class="back" scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td class="white" >0_server_name_test</td>
+                        <td class="white" >06/07/2021</td>
+                        <td class="white" >FAIL</td>
+                        <td class="white" ><a href="#">DELETE</a> | <a href="#">EDIT</a></td>
+                    </tr>    
+                    <tr>
+                        <td class="white" >1_server_name_test</td>
+                        <td class="white" >07/07/2021</td>
+                        <td class="white" >FAIL</td>
+                        <td class="white" ><a href="#">DELETE</a> | <a href="#">EDIT</a></td>
+                    </tr>
+                    <tr>
+                        <td class="white" >2_server_name_test</td>
+                        <td class="white" >05/07/2021</td>
+                        <td class="white" >WARNING</td>
+                        <td class="white" ><a href="#">DELETE</a> | <a href="#">EDIT</a></td>
+                    </tr>
+                    <tr>
+                        <td class="white" >3_server_name_test</td>
+                        <td class="white" >03/07/2021</td>
+                        <td class="white" >OK</td>
+                        <td class="white" ><a href="#">DELETE</a> | <a href="#">EDIT</a></td>
+                    </tr>
+                    <tr>
+                        <td class="white" >4_server_name_test</td>
+                        <td class="white" >06/07/2021</td>
+                        <td class="white" >OK</td>
+                        <td class="white" ><a href="#">DELETE</a> | <a href="#">EDIT</a></td>
+                    </tr>
+                    </tbody>
+              </table>
+            </div>
+        </div>
+        <div id="footer" class="white">
+            <span id="p" class="white">WatchYou 2021 ®</span>
+        </div>
+    </div>
+</body>
+</html>
