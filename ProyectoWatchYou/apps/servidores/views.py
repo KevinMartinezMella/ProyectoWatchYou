@@ -10,3 +10,7 @@ def crear(request,data):
         ip=data['ip'],
     )
     servidor.save()
+
+def read(request):
+    data = Servidor.objects.all()
+    return data

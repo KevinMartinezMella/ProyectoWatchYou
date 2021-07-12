@@ -156,36 +156,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td class="white" >0_server_name_test</td>
-                        <td class="white" >06/07/2021</td>
-                        <td class="white" >FAIL</td>
-                        <td class="white" ><a href="#">DELETE</a> | <a href="#">EDIT</a></td>
-                    </tr>    
-                    <tr>
-                        <td class="white" >1_server_name_test</td>
-                        <td class="white" >07/07/2021</td>
-                        <td class="white" >FAIL</td>
-                        <td class="white" ><a href="#">DELETE</a> | <a href="#">EDIT</a></td>
-                    </tr>
-                    <tr>
-                        <td class="white" >2_server_name_test</td>
-                        <td class="white" >05/07/2021</td>
-                        <td class="white" >WARNING</td>
-                        <td class="white" ><a href="#">DELETE</a> | <a href="#">EDIT</a></td>
-                    </tr>
-                    <tr>
-                        <td class="white" >3_server_name_test</td>
-                        <td class="white" >03/07/2021</td>
-                        <td class="white" >OK</td>
-                        <td class="white" ><a href="#">DELETE</a> | <a href="#">EDIT</a></td>
-                    </tr>
-                    <tr>
-                        <td class="white" >4_server_name_test</td>
-                        <td class="white" >06/07/2021</td>
-                        <td class="white" >OK</td>
-                        <td class="white" ><a href="#">DELETE</a> | <a href="#">EDIT</a></td>
-                    </tr>
+                    {% for data in servers %}
+                      <tr>
+                          <td class="white" >{{data.nombre_servidor}}</td>
+                          <td class="white" >06/07/2021</td>
+                          <td class="white" >OK</td>
+                          <td class="white" ><a href="#">DELETE</a> | <a href="#">EDIT</a></td>
+                      </tr>
+                    {% endfor %}
                     </tbody>
               </table>
             </div>

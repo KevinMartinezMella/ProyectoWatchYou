@@ -80,18 +80,12 @@
                         <th class="white fuente">Server's name</th>
                         <th class="white td fuente">Status</th>
                     </tr>
+                    {% for data in servers %}
                     <tr>
-                        <td class="white">0_server_name_test</td>
-                        <td class="white">FAIL</td>
+                        <td class="white">{{data.nombre_servidor}}</td>
+                        <td class="white">OK</td>
                     </tr>
-                    <tr>
-                        <td class="white">1_server_name_test</td>
-                        <td class="white">FAIL</td>
-                    </tr>
-                    <tr>
-                        <td class="white">2_server_name_test</td>
-                        <td class="white">WARNING</td>
-                    </tr>
+                    {% endfor %}
                 </table>
             </div>
         </div>

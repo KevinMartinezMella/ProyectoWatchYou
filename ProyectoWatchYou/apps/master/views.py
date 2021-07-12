@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from apps.usuarios.models import Usuario
-from apps.servidores.views import crear
-from apps.servidores.models import Servidor
+from apps.servidores.views import crear,read
+
 
 # Create your views here.
 
@@ -25,8 +25,10 @@ def dashboard(request):
     if request.method == "GET" and "usuario" in request.session:
         usuario_actual = request.session["nombre"]
         user_actual = usuario_actual.upper()
+        servers = read(request)
         context = {
-            "usuario_actual": user_actual
+            "usuario_actual": user_actual,
+            "servers":servers,
         }
         return render(request, 'dashboard.html', context)
     else:
@@ -36,8 +38,10 @@ def devices(request):
     if request.method == "GET" and "usuario" in request.session:
         usuario_actual = request.session["nombre"]
         user_actual = usuario_actual.upper()
+        servers = read(request)
         context = {
-            "usuario_actual": user_actual
+            "usuario_actual": user_actual,
+            "servers":servers,
         }
         return render(request,'devices.html', context)
     else:
