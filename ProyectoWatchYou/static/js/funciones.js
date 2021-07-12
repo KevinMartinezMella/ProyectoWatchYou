@@ -9,7 +9,7 @@ const data = {
         data: cargarDatos(),
         backgroundColor: [
         'rgb(255, 34, 36)'/*rojo*/,
-        'rgb(54, 162, 85)'/*azul*/,
+        'rgb(54, 162, 85)'/*verde*/,
         'rgb(255, 205, 86)',
         'rgb(155, 20, 86)',
         'rgb(175, 205, 20)'
