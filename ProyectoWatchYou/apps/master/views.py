@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from apps.usuarios.models import Usuario
-from apps.servidores.views import crear,read
+from apps.servidores.views import crear,read,update,delete
 
 
 # Create your views here.
@@ -54,6 +54,14 @@ def nuevo_srv(request):
     }
     crear(request,context)
     return redirect("/dashboard")
+
+def erase(request,idserver):
+    delete(request,idserver)
+    return redirect("/devices")
+
+def edit(request,idserver):
+    data = update(request,idserver)
+    return data
 
 def cerrar(request):
     del request.session['usuario']
