@@ -1,0 +1,6 @@
+--------------------
+Date: 12:7:2021
+Time: 20:3
+Phone number: +56940567702
+Message: Saludos Jean, se han verificado exitosamente las conexiones con ['www.google.com', 'www.youtube.com', 'www.facebook.com'] el 12/07/2021:10:16:00 
+--------------------

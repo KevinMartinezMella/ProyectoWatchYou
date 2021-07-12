@@ -23,3 +23,8 @@ def dashboard(request):
 
 def devices(request):
     return render(request,'devices.html')
+
+def cerrar(request):
+    del request.session['usuario']
+    del request.session['id']
+    return redirect("/")
