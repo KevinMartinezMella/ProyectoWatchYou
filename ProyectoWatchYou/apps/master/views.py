@@ -19,10 +19,16 @@ def index(request):
             return redirect("/")
 
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    if request.method == "GET" and "usuario" in request.session:
+        return render(request, 'dashboard.html')
+    else:
+        return redirect("/")
 
 def devices(request):
-    return render(request,'devices.html')
+    if request.method == "GET" and "usuario" in request.session:
+        return render(request,'devices.html')
+    else:
+        return redirect("/")
 
 def cerrar(request):
     del request.session['usuario']
