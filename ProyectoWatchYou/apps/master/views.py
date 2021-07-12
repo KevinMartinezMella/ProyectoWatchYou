@@ -14,13 +14,19 @@ def index(request):
         if usuario and usuario.password == request.POST['pw']:
             request.session['id'] = usuario.id
             request.session['usuario'] = usuario.email
+            request.session['nombre'] = usuario.nombre
             return redirect("/dashboard")
         else:
             return redirect("/")
 
 def dashboard(request):
     if request.method == "GET" and "usuario" in request.session:
-        return render(request, 'dashboard.html')
+        usuario_actual = request.session["nombre"]
+        user_actual = usuario_actual.upper()
+        context = {
+            "usuario_actual": user_actual
+        }
+        return render(request, 'dashboard.html', context)
     else:
         return redirect("/")
 
