@@ -8,4 +8,5 @@ urlpatterns=[
     path('',views.index, name='index'),
     path('dashboard', views.dashboard, name='dashboard'),
     path('devices', views.devices, name='devices'),
+    path('cerrar',views.cerrar,name='cerrar'),
 ]
