@@ -32,7 +32,12 @@ def dashboard(request):
 
 def devices(request):
     if request.method == "GET" and "usuario" in request.session:
-        return render(request,'devices.html')
+        usuario_actual = request.session["nombre"]
+        user_actual = usuario_actual.upper()
+        context = {
+            "usuario_actual": user_actual
+        }
+        return render(request,'devices.html', context)
     else:
         return redirect("/")
 
