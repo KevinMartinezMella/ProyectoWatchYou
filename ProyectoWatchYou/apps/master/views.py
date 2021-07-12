@@ -1,5 +1,7 @@
 from django.shortcuts import redirect, render
 from apps.usuarios.models import Usuario
+from apps.servidores.views import crear
+from apps.servidores.models import Servidor
 
 # Create your views here.
 
@@ -40,6 +42,14 @@ def devices(request):
         return render(request,'devices.html', context)
     else:
         return redirect("/")
+
+def nuevo_srv(request):
+    context={
+        "nombre":request.POST['servidor'],
+        "ip":request.POST['ip']
+    }
+    crear(request,context)
+    return redirect("/dashboard")
 
 def cerrar(request):
     del request.session['usuario']
