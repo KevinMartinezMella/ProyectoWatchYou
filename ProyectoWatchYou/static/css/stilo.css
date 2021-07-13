@@ -163,3 +163,12 @@
 .espacio{
     margin-bottom: 10px;
 }
+/*-----------------------------------------------------------------------delete-------------------------------------*/
+
+#sure{
+    text-align: center;
+    margin-top: 200px;
+}
+#no:hover{
+    color: white;
+}

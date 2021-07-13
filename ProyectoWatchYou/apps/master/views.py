@@ -1,5 +1,7 @@
 from django.shortcuts import redirect, render
 from apps.usuarios.models import Usuario
+from apps.servidores.views import crear,read,update,delete
+
 
 # Create your views here.
 
@@ -23,8 +25,10 @@ def dashboard(request):
     if request.method == "GET" and "usuario" in request.session:
         usuario_actual = request.session["nombre"]
         user_actual = usuario_actual.upper()
+        servers = read(request)
         context = {
-            "usuario_actual": user_actual
+            "usuario_actual": user_actual,
+            "servers":servers,
         }
         return render(request, 'dashboard.html', context)
     else:
@@ -34,12 +38,36 @@ def devices(request):
     if request.method == "GET" and "usuario" in request.session:
         usuario_actual = request.session["nombre"]
         user_actual = usuario_actual.upper()
+        servers = read(request)
         context = {
-            "usuario_actual": user_actual
+            "usuario_actual": user_actual,
+            "servers":servers,
         }
         return render(request,'devices.html', context)
     else:
         return redirect("/")
+
+def nuevo_srv(request):
+    context={
+        "nombre":request.POST['servidor'],
+        "ip":request.POST['ip']
+    }
+    crear(request,context)
+    return redirect("/dashboard")
+
+def erase(request,idserver):
+    if request.method=="POST":
+        delete(request,idserver)
+        return redirect("/devices")
+    idserv = idserver
+    context = {
+        "idserv":idserv
+    }   
+    return render(request,'eliminarServidor.html',context)
+
+def edit(request,idserver):
+    data = update(request,idserver)
+    return redirect('/devices')
 
 def cerrar(request):
     del request.session['usuario']
