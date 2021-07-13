@@ -5,5 +5,5 @@ app_name='servidores'
 
 
 urlpatterns=[
-    path('',views.index, name='index')
+    path('',views.index, name='index'),
 ]

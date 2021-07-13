@@ -49,15 +49,15 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="POST">
+                            <form action="/agregarServidor" method="POST">
                                 {% csrf_token %}
                                 <input class="input espacio" type="text" name="servidor" placeholder="Server name">
                                 <input class="input" type="text" name="ip" id="ip" placeholder="Direccion IP">
-                            </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             <button type="button" class="btn color">Add Device</button>
+                            </form>
                         </div>
                         </div>
                     </div>

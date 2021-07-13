@@ -5,6 +5,5 @@ from django.db.models.base import Model
 class Servidor(models.Model):
     nombre_servidor = models.CharField(max_length=255,null=False,blank=False)
     ip = models.CharField(max_length=255,null=False,blank=False)
-    estado = models.CharField(max_length=255,null=False,blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
