@@ -121,7 +121,7 @@
                               </button>
                             </div>
                             <div class="modal-body">
-                              <form action="" method="POST">
+                              <form action="/probar" method="POST">
                                   {% csrf_token %}
                                   
                                     <select class="input espacio" name="select">
@@ -130,12 +130,11 @@
                                           <option>{{data.nombre_servidor}}</option>
                                         {% endfor %}
                                     </select>
-                                    
-                              </form>
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                               <button type="submit" class="btn color">Test Device</button>
+                            </form>
                             </div>
                           </div>
                         </div>
