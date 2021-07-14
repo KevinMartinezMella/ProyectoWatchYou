@@ -4,3 +4,8 @@ Time: 20:3
 Phone number: +56940567702
 Message: Saludos Jean, se han verificado exitosamente las conexiones con ['www.google.com', 'www.youtube.com', 'www.facebook.com'] el 12/07/2021:10:16:00 
 --------------------
+Date: 13:7:2021
+Time: 19:36
+Phone number: +56953485258
+Message: Saludos Jean, se han verificado exitosamente las conexiones con ['www.google.com', 'www.youtube.com', 'www.facebook.com'] el 13/07/2021:21:51:54 
+--------------------

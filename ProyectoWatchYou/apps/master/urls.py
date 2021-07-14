@@ -12,4 +12,5 @@ urlpatterns=[
     path('nuevo_srv',views.nuevo_srv,name='nuevo_srv'),
     path('delete/<int:idserver>',views.erase,name='delete'),
     path('edit/<int:idserver>',views.edit,name='edit'),
+    path('programar',views.programar,name='programar'),
 ]

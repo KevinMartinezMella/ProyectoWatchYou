@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'apps.usuarios',
     'apps.servidores',
     'apps.master',
+    'apps.estados',
+    'apps.licencias',
     
     'django.contrib.admin',
     'django.contrib.auth',
