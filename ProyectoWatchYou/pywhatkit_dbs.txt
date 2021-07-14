@@ -1,0 +1,26 @@
+--------------------
+Date: 13:7:2021
+Time: 16:54
+Phone number: +56940567702
+Message: Saludos Jean, ha ocurrido un problema con las conexiones  1 el 13/07/2021:16:52:16 
+--------------------
+Date: 13:7:2021
+Time: 17:7
+Phone number: +56940567702
+Message: Saludos Jean, ha ocurrido un problema con las conexiones  1 el 13/07/2021:17:05:44 
+--------------------
+Date: 13:7:2021
+Time: 17:13
+Phone number: +56940567702
+Message: Saludos Jean, ha ocurrido un problema con las conexiones  1 el 13/07/2021:17:11:49 
+--------------------
+Date: 13:7:2021
+Time: 17:15
+Phone number: +56940567702
+Message: Saludos Jean, ha ocurrido un problema con las conexiones  1 el 13/07/2021:17:13:28 
+--------------------
+Date: 13:7:2021
+Time: 20:3
+Phone number: +56940567702
+Message: Saludos Jean, se han verificado exitosamente las conexiones con ['www.google.com', 'www.youtube.com', 'www.facebook.com'] el 13/07/2021:20:55:21 
+--------------------

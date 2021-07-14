@@ -1,6 +1,8 @@
+from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from apps.usuarios.models import Usuario
 from apps.servidores.views import crear,read,update,delete
+# from apps.clases import monitor
 
 
 # Create your views here.
@@ -68,6 +70,14 @@ def erase(request,idserver):
 def edit(request,idserver):
     data = update(request,idserver)
     return redirect('/devices')
+
+def programar(request):
+    context = {
+        "id":request.POST['id'],
+        "hora":request.POST['hora']
+    }
+
+    return redirect("/devices")
 
 def cerrar(request):
     del request.session['usuario']
