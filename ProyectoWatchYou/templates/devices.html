@@ -177,8 +177,8 @@
                               <div class="modal-body">
                                   <form action="/edit/{{data.id}}" method="POST">
                                       {% csrf_token %}
-                                      <input class="input espacio" type="text" name="servidor" placeholder="Server name">
-                                      <input class="input" type="text" name="ip" id="ip" placeholder="Direccion IP">
+                                      <input class="input espacio" type="text" name="servidor" placeholder="Server name" value="{{ data.nombre_servidor }}">
+                                      <input class="input" type="text" name="ip" id="ip" placeholder="Direccion IP" value="{{ data.ip }}">
                               
                               </div>
                               <div class="modal-footer">
