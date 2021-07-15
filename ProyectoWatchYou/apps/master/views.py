@@ -81,8 +81,10 @@ def programar(request):
 
 def probar(request):
     idserver = request.POST['select']
-    Monitor.ping(request,idserver)
-    Validar.verificar(request)
+    monitor = Monitor()
+    isUp = monitor.ping(idserver)
+    validar = Validar()
+    validar.verificar(isUp)
     return redirect("/devices")
 
 def cerrar(request):

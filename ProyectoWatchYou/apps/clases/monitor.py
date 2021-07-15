@@ -11,9 +11,11 @@ from apps.servidores.models import Servidor
 
 class Monitor:
 	def __init__(self):
-		self.host = Servidor.objects.all()
+		
+		# self.host = Servidor.objects.all()
 	# 	self.idserver = ""
 	# 	#self.host = ['www.google.com']
+		pass
 	
 	def ping(self,idserver=""):
 		if len(idserver) > 0 or idserver != "":
@@ -24,7 +26,17 @@ class Monitor:
 			p = subprocess.Popen('ping '+self.host.ip,stdout=subprocess.PIPE)
 			p.wait()
 			global nombre
+
 			nombre = self.host.nombre_servidor
+			if p.poll():
+					print(nombre+" is Down")
+					stat = False
+			else:
+				print(nombre+" is Up")
+				print(nombre)
+				stat = True
+
+			return stat
 		else:
 			self.host = Servidor.objects.all()
 			nombre =[]
@@ -45,8 +57,8 @@ class Monitor:
 
 			return stat
 	
-ejecutar = Monitor()
-ejecutar.ping()
+# ejecutar = Monitor()
+# ejecutar.ping()
 
 class Validar:
 
@@ -54,8 +66,8 @@ class Validar:
 		self.engine = pyttsx3.init()
 		self.engine.setProperty('rate',100)
 
-	def verificar(self):
-		if ejecutar:
+	def verificar(self, isUp):
+		if isUp:
 			print("Equipos operativos")
 			new_email = Email()
 			new_email.sendMail(str(nombre)+" Is Up")
@@ -71,5 +83,5 @@ class Validar:
 
 		return self
 
-realizar_validacion = Validar()
-realizar_validacion.verificar()
+# realizar_validacion = Validar()
+# realizar_validacion.verificar()

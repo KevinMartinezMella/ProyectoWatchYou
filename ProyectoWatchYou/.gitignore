@@ -1,7 +1,0 @@
-.vscode/
-__pycache__/
-env/
-json/
-db.sqlite3
-**/migrations/**
-!**/migrations/__init__.py
