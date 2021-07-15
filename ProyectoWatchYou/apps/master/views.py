@@ -83,7 +83,7 @@ def probar(request):
     idserver = request.POST['select']
     Monitor.ping(request,idserver)
     Validar.verificar(request)
-    return HttpResponse(request)
+    return redirect("/devices")
 
 def cerrar(request):
     del request.session['usuario']

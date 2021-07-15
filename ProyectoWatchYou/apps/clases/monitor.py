@@ -27,18 +27,20 @@ class Monitor:
 			nombre = self.host.nombre_servidor
 		else:
 			self.host = Servidor.objects.all()
+			nombre =[]
 			for i in self.host:
 				os = "-n" if platform.system().lower() == "windows" else "-c"
 				action = ['ping', os,'5', i.ip]
 				subprocess.call(action)
 				p = subprocess.Popen('ping '+i.ip,stdout=subprocess.PIPE)
 				p.wait() 
-				nombre = i.nombre_servidor
+				nombre.append(i.nombre_servidor)
 				if p.poll():
 					print(i.nombre_servidor+" is Down")
 					stat = False
 				else:
 					print(i.nombre_servidor+" is Up")
+					print(nombre)
 					stat = True
 
 			return stat
@@ -50,17 +52,17 @@ class Validar:
 
 	def __init__(self):
 		self.engine = pyttsx3.init()
-		self.engine.setProperty('rate',300)
+		self.engine.setProperty('rate',100)
 
 	def verificar(self):
 		if ejecutar:
 			print("Equipos operativos")
 			new_email = Email()
-			new_email.sendMail(nombre+" Is Up")
-			# new_message = Msg()
-			# new_message.mensaje(nombre)
-			# self.engine.say("Funciona")
-			# self.engine.runAndWait()
+			new_email.sendMail(str(nombre)+" Is Up")
+			#new_message = Msg()
+			#new_message.mensaje(nombre)
+			self.engine.say("Funciona")
+			self.engine.runAndWait()
 
 		else:
 			print("Equipo Caido")
