@@ -24,3 +24,33 @@ Time: 20:3
 Phone number: +56940567702
 Message: Saludos Jean, se han verificado exitosamente las conexiones con ['www.google.com', 'www.youtube.com', 'www.facebook.com'] el 13/07/2021:20:55:21 
 --------------------
+Date: 14:7:2021
+Time: 15:53
+Phone number: +56953485258
+Message: Saludos Jean, se han verificado exitosamente las conexiones con www.google.com el 14/07/2021:15:50:23 
+--------------------
+Date: 14:7:2021
+Time: 15:54
+Phone number: +56953485258
+Message: Saludos Jean, se han verificado exitosamente las conexiones con www.google.com el 14/07/2021:15:51:00 
+--------------------
+Date: 14:7:2021
+Time: 16:11
+Phone number: +56953485258
+Message: Saludos Jean, se han verificado exitosamente las conexiones con www.google.com el 14/07/2021:16:08:53 
+--------------------
+Date: 14:7:2021
+Time: 17:32
+Phone number: +56953485258
+Message: Saludos Jean, se han verificado exitosamente las conexiones con <QuerySet [<Servidor: 1.1.1.1>]> el 14/07/2021:17:29:22 
+--------------------
+Date: 14:7:2021
+Time: 17:33
+Phone number: +56953485258
+Message: Saludos Jean, se han verificado exitosamente las conexiones con <QuerySet [<Servidor: 1.1.1.1>]> el 14/07/2021:17:30:52 
+--------------------
+Date: 14:7:2021
+Time: 17:37
+Phone number: +56953485258
+Message: Saludos Jean, se han verificado exitosamente las conexiones con prueba el 14/07/2021:17:34:29 
+--------------------

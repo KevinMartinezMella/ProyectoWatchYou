@@ -2,7 +2,7 @@ from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from apps.usuarios.models import Usuario
 from apps.servidores.views import crear,read,update,delete
-# from apps.clases import monitor
+from apps.clases.monitor import Monitor, Validar
 
 
 # Create your views here.
@@ -55,7 +55,7 @@ def nuevo_srv(request):
         "ip":request.POST['ip']
     }
     crear(request,context)
-    return redirect("/dashboard")
+    return redirect("/devices")
 
 def erase(request,idserver):
     if request.method=="POST":
@@ -77,6 +77,14 @@ def programar(request):
         "hora":request.POST['hora']
     }
 
+    return redirect("/devices")
+
+def probar(request):
+    idserver = request.POST['select']
+    monitor = Monitor()
+    isUp = monitor.ping(idserver)
+    validar = Validar()
+    validar.verificar(isUp)
     return redirect("/devices")
 
 def cerrar(request):
