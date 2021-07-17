@@ -88,10 +88,9 @@
                                     <select class="input espacio" name="select">
                                         <option selected>Select server</option>
                                         {% for data in servers %}
-                                          <option>{{data.nombre_servidor}}</option>
+                                          <option value="{{ data.id }}" >{{data.nombre_servidor}}</option>
                                         {% endfor %}
                                     </select>
-                                    <input type="hidden" name="id" value="{{data.id}}">
                                     <li class="espacio" ><input class="input" type="time" name="hora"></li>
                                   </ul>
                             </div>

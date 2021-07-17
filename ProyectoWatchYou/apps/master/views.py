@@ -1,8 +1,14 @@
+from django.http import request
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from apps.usuarios.models import Usuario
 from apps.servidores.views import crear,read,update,delete
 from apps.clases.monitor import Monitor, Validar
+from apps.schedules.models import *
+from apps.schedules.views import agregarSchedule
+from datetime import datetime, timezone
+import schedule
+import time
 
 
 # Create your views here.
@@ -72,15 +78,31 @@ def edit(request,idserver):
     return redirect('/devices')
 
 def programar(request):
-    context = {
-        "id":request.POST['id'],
-        "hora":request.POST['hora']
-    }
+    idserver = request.POST['select']
+    idhora = request.POST['hora']
+    agregarSchedule(request, idserver, idhora)
+    hoy = datetime.now()
+    agenda = Schedule.objects.get(id = idserver)
+    time = "%2d:%02d" %(hoy.hour, hoy.minute)
+    print(idhora)
+    schedule.every().day.at("idhora").do(probar(request))
+    while True:
+        try:
+            schedule.run_pending()
+            time.sleep(1)
+        except:
+            continue
+        stop = input('Presiona q para finalizar el programa')
+        if stop=='q':
+            break
+    # print("%2d:%02d" %(hoy.hour, hoy.minute))
+        # probar(idserver = idserver)
 
-    return redirect("/devices")
+    # return redirect("/devices")
 
 def probar(request):
-    idserver = request.POST['select']
+    # idserver = request.POST['select']
+    idserver = "1"
     monitor = Monitor()
     isUp = monitor.ping(idserver)
     validar = Validar()
@@ -91,3 +113,14 @@ def cerrar(request):
     del request.session['usuario']
     del request.session['id']
     return redirect("/")
+
+# def probandoPrueba(request):
+#     probar()
+#     return HttpResponse("funciona")
+
+
+# schedule.every().day.at("14:44").do(cerrar(request))
+
+# while True:
+#     schedule.run_pending()
+#     time.sleep(1)
