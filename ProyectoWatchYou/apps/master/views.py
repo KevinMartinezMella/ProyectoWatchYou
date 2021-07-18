@@ -85,10 +85,10 @@ def programar(request):
     agenda = Schedule.objects.get(id = idserver)
     time = "%2d:%02d" %(hoy.hour, hoy.minute)
     print(idhora)
-    schedule.every().day.at("idhora").do(probar(request))
+    schedules.every().day.at("idhora").do(probar(request))
     while True:
         try:
-            schedule.run_pending()
+            schedules.run_pending()
             time.sleep(1)
         except:
             continue
