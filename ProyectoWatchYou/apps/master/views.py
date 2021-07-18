@@ -7,7 +7,7 @@ from apps.clases.monitor import Monitor, Validar
 from apps.schedules.models import *
 from apps.schedules.views import agregarSchedule
 from datetime import datetime, timezone
-import schedule
+import schedules
 import time
 
 
