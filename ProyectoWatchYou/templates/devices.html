@@ -85,7 +85,7 @@
                               <form action="/programar" method="POST">
                                   {% csrf_token %}
                                   <ul>
-                                    <select class="input espacio" name="select">
+                                    <select class="input espacio" name="server">
                                         <option selected>Select server</option>
                                         {% for data in servers %}
                                           <option value="{{ data.id }}" >{{data.nombre_servidor}}</option>
@@ -123,7 +123,7 @@
                               <form action="/probar" method="POST">
                                   {% csrf_token %}
                                   
-                                    <select class="input espacio" name="select">
+                                    <select class="input espacio" name="server">
                                         <option selected>Select server</option>
                                         {% for data in servers %}
                                           <option value="{{data.id}}">{{data.nombre_servidor}}</option>

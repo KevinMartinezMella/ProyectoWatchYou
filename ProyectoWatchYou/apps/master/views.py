@@ -79,32 +79,36 @@ def edit(request,idserver):
     return redirect('/devices')
 
 
-def probar(request):
-    idserver = request.POST['select']
+def probar(idserver):
     monitor = Monitor()
     isUp = monitor.ping(idserver)
     validar = Validar()
     validar.verificar(isUp)
+
+def hola(x):
+    print("HOLAAAAAAAAAAAAAAA "+str(x))
+
+def multiThread(request,delay=0):
+    task = threading.Timer(delay, probar,request.POST['server'])
+    task.start()
     return redirect("/devices")
 
-def hola():
-    print("HOLAAAAAAAAAAAAAAA")
-
 def programar(request):
-    idserver = request.POST['select']
+    idserver = request.POST['server']
     idhora = request.POST['hora']
     agregarSchedule(request, idserver, idhora)
     hoy = datetime.now()
-    agenda = Schedule.objects.filter(id = idserver)
-    time = "%2d:%02d" %(hoy.hour, hoy.minute)
-    print(idhora)
+    agenda = Schedule.objects.get(hora=idhora)
+    agenda = agenda.hora.split(':')
+    print(agenda)
     now = datetime.now()
-    run = datetime(2021, 7, 19, 11, 11)
+    run = datetime(now.year, now.month, now.day ,int(agenda[0]),int(agenda[1]))
     delay = (run - now).total_seconds()
-    task = threading.Timer(delay, probar)
-    task.start()
+    print(delay)
+    multiThread(request,delay)
+    agenda=0
 
-    # return redirect("/devices")
+    return redirect("/devices")
 
 def cerrar(request):
     del request.session['usuario']
