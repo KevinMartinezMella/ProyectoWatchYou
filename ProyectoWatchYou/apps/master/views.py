@@ -8,8 +8,6 @@ from apps.schedules.models import *
 from apps.schedules.views import agregarSchedule
 from datetime import datetime, timezone
 import threading
-import schedule
-import time
 
 
 # Create your views here.
