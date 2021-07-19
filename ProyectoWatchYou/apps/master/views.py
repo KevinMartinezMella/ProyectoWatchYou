@@ -85,9 +85,6 @@ def probar(idserver):
     validar = Validar()
     validar.verificar(isUp)
 
-def hola(x):
-    print("HOLAAAAAAAAAAAAAAA "+str(x))
-
 def multiThread(request,delay=0):
     task = threading.Timer(delay, probar,request.POST['server'])
     task.start()
