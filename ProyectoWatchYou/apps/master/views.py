@@ -1,3 +1,4 @@
+from apps.estados.models import Estado
 from django.http import request
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
@@ -8,6 +9,7 @@ from apps.schedules.models import *
 from apps.schedules.views import agregarSchedule
 from datetime import datetime, timezone
 import threading
+from django.views.decorators.csrf import csrf_exempt
 
 
 # Create your views here.
@@ -32,10 +34,12 @@ def dashboard(request):
     if request.method == "GET" and "usuario" in request.session:
         usuario_actual = request.session["nombre"]
         user_actual = usuario_actual.upper()
+        estados = Estado.objects.all()
         servers = read(request)
         context = {
             "usuario_actual": user_actual,
             "servers":servers,
+            'estados': list(estados)
         }
         return render(request, 'dashboard.html', context)
     else:

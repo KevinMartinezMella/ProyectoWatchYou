@@ -7,6 +7,7 @@ from apps.clases.send_mail import Email
 from datetime import datetime
 from pyttsx3 import engine
 from apps.servidores.models import Servidor
+from apps.estados.models import Estado
 
 
 class Monitor:
@@ -29,12 +30,24 @@ class Monitor:
 
 			nombre = self.host.nombre_servidor
 			if p.poll():
-					print(nombre+" is Down")
+					status = "is Down"
+					print(nombre+status)
 					stat = False
+					server = Estado(
+						servidor=self.host,
+						estado = status
+					)
+					server.save()
 			else:
-				print(nombre+" is Up")
+				status = "is Up"
+				print(nombre+status)
 				print(nombre)
 				stat = True
+				server = Estado(
+					servidor=self.host,
+					estado = status
+				)
+				server.save()
 
 			return stat
 		else:
