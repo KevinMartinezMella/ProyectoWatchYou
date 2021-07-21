@@ -1,21 +1,25 @@
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
-from .models import Servidor
+from .models import Servidor, Usuario
 
 # Create your views here.
 def index(request):
     return render (request,'index.html')
 
 def crear(request,data):
-    servidor = Servidor(
-        nombre_servidor=data['nombre'],
-        ip=data['ip'],
-    )
-    servidor.save()
+    if "id" in request.session:
+        usuario = Usuario.objects.get(id = request.session['id'])
+        servidor = Servidor(
+            nombre_servidor=data['nombre'],
+            ip=data['ip'],
+            
+        )
+        servidor.save()
+        servidor.usuario.add(usuario)
 
-def read(request):
-    data = Servidor.objects.all()
-    return data
+# def read(request):
+#     data = Servidor.objects.all()
+#     return data
 
 def update(request,idserver):
     get_server = Servidor.objects.get(id=idserver)

@@ -1,9 +1,10 @@
+from apps.estados.models import EstadoServidor
 from apps.estados.models import Estado
 from django.http import request
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
 from apps.usuarios.models import Usuario
-from apps.servidores.views import crear,read,update,delete
+from apps.servidores.views import crear,update,delete
 from apps.clases.monitor import Monitor, Validar
 from apps.schedules.models import *
 from apps.schedules.views import agregarSchedule
@@ -34,12 +35,12 @@ def dashboard(request):
     if request.method == "GET" and "usuario" in request.session:
         usuario_actual = request.session["nombre"]
         user_actual = usuario_actual.upper()
-        estados = Estado.objects.all()
-        servers = read(request)
+        usuario = Usuario.objects.get(id = request.session['id'])
+        print(usuario.servidores.all())
+        # servers = read(request)
         context = {
             "usuario_actual": user_actual,
-            "servers":servers,
-            'estados': list(estados)
+            "servers":usuario.servidores.all()
         }
         return render(request, 'dashboard.html', context)
     else:
@@ -48,11 +49,11 @@ def dashboard(request):
 def devices(request):
     if request.method == "GET" and "usuario" in request.session:
         usuario_actual = request.session["nombre"]
+        usuario = Usuario.objects.get(id = request.session['id'])
         user_actual = usuario_actual.upper()
-        servers = read(request)
         context = {
             "usuario_actual": user_actual,
-            "servers":servers,
+            "servers": usuario.servidores.all(),
         }
         return render(request,'devices.html', context)
     else:

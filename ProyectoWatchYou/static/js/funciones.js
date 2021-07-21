@@ -1,10 +1,53 @@
-let datos = [];
+// let datos = [];
 
-const data = {
+// const data = {
+//     labels: [
+//         'FAIL',
+//         'OK',
+//         'WARNING'
+//     ], 
+//     datasets: [{
+//         label: 'My First Dataset',
+//         data: datos,
+//         backgroundColor: [
+//         'rgb(255, 34, 36)'/*rojo*/,
+//         'rgb(54, 162, 85)'/*verde*/,
+//         'rgb(255, 205, 86)',
+//         // 'rgb(155, 20, 86)',
+//         // 'rgb(175, 205, 20)'
+
+
+//         ],
+//         hoverOffset: 4
+//     }]
+//     };
+//     const config = {
+//         type: 'pie',
+//         data: data,
+//     };
+
+
+function crearGrafico(estados){ 
+    estados = estados.substring(1, estados.length -1).split(', ');
+    let up = 0;
+    let down = 0;
+    for(let i = 0; i < estados.length; i++){
+        if (estados[i]== '1'){
+            up++;
+        }
+        else if (estados[i]== '2'){
+            down++;
+        } 
+    }  
+    let datos = [up,down];
+    console.log(estados)
+    console.log(estados)
+    
+    console.log(datos)
+    const data = {
     labels: [
         'FAIL',
         'OK',
-        'WARNING'
     ], 
     datasets: [{
         label: 'My First Dataset',
@@ -12,7 +55,7 @@ const data = {
         backgroundColor: [
         'rgb(255, 34, 36)'/*rojo*/,
         'rgb(54, 162, 85)'/*verde*/,
-        'rgb(255, 205, 86)',
+        // 'rgb(255, 205, 86)',
         // 'rgb(155, 20, 86)',
         // 'rgb(175, 205, 20)'
 
@@ -25,22 +68,6 @@ const data = {
         type: 'pie',
         data: data,
     };
-
-
-function crearGrafico(estados){ 
-    estados = estados.substring(1, estados.length -1)
-    for(let i = 0; i < estados.length; i++){
-        if (estados.estado == 'is Up'){
-            estados.estado[i] = 1;
-        }
-        else if (estados.estado == 'is Down'){
-            estados.estado[i] = 2;
-        } 
-    }  
-    let datos = estados.split(', ' );
-    console.log(estados)
-    
-    console.log(datos)
     var myChart = new Chart(
       document.getElementById('myChart'),
       config

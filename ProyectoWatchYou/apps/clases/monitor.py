@@ -1,3 +1,4 @@
+from apps.estados.models import EstadoServidor
 import pyttsx3
 import platform
 import subprocess
@@ -33,9 +34,9 @@ class Monitor:
 					status = "is Down"
 					print(nombre+status)
 					stat = False
-					server = Estado(
-						servidor=self.host,
-						estado = status
+					server = EstadoServidor(
+						servidores=self.host,
+						estados = Estado.objects.get(id = 3)
 					)
 					server.save()
 			else:
@@ -43,9 +44,9 @@ class Monitor:
 				print(nombre+status)
 				print(nombre)
 				stat = True
-				server = Estado(
-					servidor=self.host,
-					estado = status
+				server = EstadoServidor(
+					servidores=self.host,
+					estados = Estado.objects.get(id = 2)
 				)
 				server.save()
 

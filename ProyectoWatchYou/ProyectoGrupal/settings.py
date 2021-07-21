@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'ProyectoGrupal.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql', # cambiar la base de datos a postgres
-        'NAME': 'rtv1', # nombre de la base de datos, se creará en el servidor de Postgres a continuación
+        'NAME': 'nuevadb1', # nombre de la base de datos, se creará en el servidor de Postgres a continuación
         'USER': 'postgres', # postgres para macOS o 'USER': 'postgres', para Windows
         'PASSWORD': 'root', # contraseña a la que la cambió al instalar Postgres
         'HOST': '127.0.0.1', # dirección IP localhost
