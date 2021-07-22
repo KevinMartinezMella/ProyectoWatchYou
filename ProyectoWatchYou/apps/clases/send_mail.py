@@ -4,8 +4,9 @@ class Email:
 
     def sendMail(self,input):
         from_addr = 'yonibanck@gmail.com'
+        to = ['jeanpaoloramos@gmail.com']
         #to = ['jeanpaoloramos@gmail.com','iamkamm7@gmail.com','dosorno@codingdojo.cl']
-        to = ['iamkamm7@gmail.com']
+        #to = ['iamkamm7@gmail.com']
         sub = 'Resultados revision programada de equipos'
         mes = str(input)
         message = 'Subject: {}\n\n{}'.format(sub, mes)
