@@ -50,3 +50,73 @@ img{
 #pw{
     color: black;
 }
+/*------------------------------------CARGA----------------------------------------------------*/
+#contenedor_carga{
+    background-color: rgba(13,29,44,1);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: 10000;
+}
+#carga{
+    border: 5px solid #ccc;
+    border-top-color:#F4266A ;
+    border-top-style: groove ;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 250px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    -webkit-animation: girar 1.5s linear infinite ;
+    -o-animation: girar 1.5s linear infinite;
+    animation: girar 1.5s linear infinite;
+} 
+
+@keyframes girar {
+    from { transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+#logowatch{
+    width: 150px;
+     /* border-radius: 100%; */
+    border: 1px solid white;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/*----------------------------------------------video---------------------------------------------------*/
+#background_video {
+    position: absolute;
+  
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  
+    object-fit: cover;
+    height: 100%; width: 100%;
+  }
+  
+  #video_cover {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: url('https://vjs.zencdn.net/v/oceans.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  #overlay {
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+  }

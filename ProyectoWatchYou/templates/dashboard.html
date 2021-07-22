@@ -20,8 +20,11 @@
     
     <title>Dashboard</title>
 </head>
-<body onload="crearGrafico('{{ estados }}')" >
-<!-- <body> -->
+<body onload="crearGrafico('{{ estados }}'), carga()" >
+    <div id="contenedor_carga">
+        <img id="logowatch" src="../static/img/Watchugif.gif" alt="">
+        <div id="carga"></div>
+    </div>
     <div id="containers">
         <img id="logo" src="{% static 'img/WatchU bluedark.png' %}">
         <div class="inline" id="enlaces">
