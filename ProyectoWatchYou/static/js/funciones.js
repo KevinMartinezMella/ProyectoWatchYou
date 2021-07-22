@@ -43,7 +43,6 @@ function crearGrafico(estados){
       document.getElementById('myChart'),
       config
     );
-<<<<<<< HEAD
 }
 // function cargarDatos(){
 //     datos = ;
@@ -117,6 +116,3 @@ function video(){
     });
   }());
 } 
-=======
-}
->>>>>>> 7fcc8e2b4752bd392f308370eaf147328a6366b9
