@@ -1,3 +1,4 @@
+from apps.usuarios.models import Usuario
 from django.db import models
 from django.db.models.base import Model
 
@@ -7,6 +8,7 @@ class Servidor(models.Model):
     ip = models.CharField(max_length=255,null=False,blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    usuario = models.ManyToManyField(Usuario, related_name='servidores')
 
     def __str__(self):
         return f'{self.ip}'

@@ -1,18 +1,34 @@
-const data = {
+
+function crearGrafico(estados){ 
+    estados = estados.substring(1, estados.length -1).split(', ');
+    let up = 0;
+    let down = 0;
+    console.log(estados)
+    for(let i = 0; i < estados.length; i++){
+        if (estados[i] == "isUp"){
+            up++;
+        }
+        else if (estados[i] == "isDown"){
+            down++;
+        } 
+    }  
+    let datos = [up,down];
+    
+    console.log(datos)
+    const data = {
     labels: [
-        'FAIL',
         'OK',
-        'WARNING'
+        'FAIL',
     ], 
     datasets: [{
         label: 'My First Dataset',
-        data: cargarDatos(),
+        data: datos,
         backgroundColor: [
-        'rgb(255, 34, 36)'/*rojo*/,
         'rgb(54, 162, 85)'/*verde*/,
-        'rgb(255, 205, 86)',
-        'rgb(155, 20, 86)',
-        'rgb(175, 205, 20)'
+        'rgb(255, 34, 36)'/*rojo*/,
+        // 'rgb(255, 205, 86)',
+        // 'rgb(155, 20, 86)',
+        // 'rgb(175, 205, 20)'
 
 
         ],
@@ -23,19 +39,8 @@ const data = {
         type: 'pie',
         data: data,
     };
-
-
-function crearGrafico(){                                                    
     var myChart = new Chart(
       document.getElementById('myChart'),
       config
     );
-}
-function cargarDatos(arr){
-    datos = [];
-    // for(let i = 0; i < arr.lenght; i++){
-        for(let i = 0; i < 5; i++){
-            datos.push(Math.floor(Math.random() *10))
-    }
-    return datos;
 }

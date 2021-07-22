@@ -1,8 +1,7 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     border: 0;
-    /* background-color: #0d1d2c; */
 }
 #containers{
     padding: 20px;
@@ -65,7 +64,6 @@
     height: 20px;
     width: 20px;
     margin-left: 10px;
-    /* border: 1px solid black; */
 }
 #rojo{
     background-color: #ff2224;
@@ -120,17 +118,17 @@
 #p{
     vertical-align: middle;
     font-size: 20px;
-}
+} */
 /* ------------------------------------------------Grafico-----------------------------------------------  */
 
-#canvas{
+/* #canvas{
     margin-left: 250px;
     margin-top: 30px;
-}
+} */
 
   /*--------------------------------------------devices-------------------------------------------------------- */
 
-#ul{
+/* #ul{
     margin-left: 1100px;
     font-size: 30px;
 }
@@ -142,7 +140,6 @@
 }
 .li:hover{
     text-decoration: none;
-    /* color: aqua; */
 }
 .back{
     background-color: #0d1d2c !important;
@@ -162,7 +159,7 @@
 }
 .espacio{
     margin-bottom: 10px;
-}
+} */
 /*-----------------------------------------------------------------------delete-------------------------------------*/
 
 #sure{
@@ -172,3 +169,202 @@
 #no:hover{
     color: white;
 }
+
+/* @media(max-width: 480px)  {
+    #containers{
+        padding: 20px;
+        background-color: #1ad123;
+        height: 969px;
+    }
+    
+}
+
+@media(min-width: 600px) and (max-width: 1280px) {
+    #containers{
+        padding: 20px;
+        background-color: #0d1d2c;
+        height: 969px;
+    }
+
+}
+@media(min-width: 1281px) and (max-width: 1920px) { */
+    *{
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    #containers{
+        padding: 20px;
+        background-color: #0d1d2c;
+        height: 969px;
+    }
+    .inline{
+        display: inline-block;
+    }
+    #logo{
+        width: 18%;
+    }
+    .menu{
+        font-size: 40px;
+        color: white;
+        width: 20%;
+    }
+    .menu:hover{
+        text-decoration: none;
+    }
+    #enlaces{
+        vertical-align: top;
+        margin-top: 10px;
+        width: 60%;
+        margin-left: 20%;
+    }
+    #nav{
+        padding: 20px;
+    }
+    .left{
+        margin-left: 100px;
+    }
+    #titulo{
+        background-color: white;
+        height: 100px;
+        margin-top: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    #titulo h1{
+        background-color: white;
+        color: #0d1d2c;
+        font-size: 50px;
+    }
+    #menu{
+        height: 550px;
+        background-color: white;
+        margin-top: 30px;
+        border-radius: 10px;
+        padding: 20px;
+    }
+    #grafico{
+        margin: 50px 0px 0px 80px;
+    }
+    .gcolors{
+        vertical-align: top;
+        margin-top: 70px;
+        margin-left: 30px;
+    }
+    .colores{
+        height: 20px;
+        width: 20px;
+        margin-left: 10px;
+    }
+    #rojo{
+        background-color: #ff2224;
+    }
+    #amarillo{
+        background-color: #ffcd56;
+    }
+    #verde{
+        background-color: #36a255;
+    }
+    .span{
+        background-color: white;
+        vertical-align: top;
+        margin-left: 10px;
+        color: #0d1d2c;
+    }
+    #datos{
+        background-color: white;
+    }
+    #alarmas h2{
+        color: #0d1d2c;
+        background-color: white;
+    }
+    #alarmas{
+        width: 20%;
+        background-color: white;
+        vertical-align: top;
+        margin-left: 7%;
+    }
+    .white{
+        background-color: white;
+    }
+    .td{
+        padding-left: 30px;
+    }
+    .fuente{
+        font-size: 30px;
+    }
+    #tabla{
+        margin-left: 150px;
+        margin-top: 30px;
+    }
+    #noname{
+        margin-left: 5%;
+    }
+    #footer{
+        height: 100px;
+        margin-top: 40px;
+        border-radius: 10px;
+        text-align: center;
+        padding-top: 50px;
+    }
+    #p{
+        vertical-align: middle;
+        font-size: 20px;
+    }
+    .tabla{
+        width: 30%;
+    }
+    #canvas{
+        width: 60%;
+        margin-left: 250px;
+        margin-top: 30px;
+    }
+    /*--------------------------------------------devices-------------------------------------------------------- */
+
+    #ul{
+        /* margin-left: 1100px; */
+        margin-left: 42%;
+        font-size: 30px;
+        width: 45%;
+    }
+    .li{
+        color: white;
+        background-color: #0d1d2c;
+        padding: 10px; 
+        border-radius: 8px;
+        width: 100%;
+    }
+    .li:hover{
+        text-decoration: none;
+    }
+    .back{
+        background-color: #0d1d2c !important;
+    }
+    #tabladevice{
+        margin-top: 50px;
+    }
+    .color{
+        background-color: #0d1d2c !important;
+        color: white !important;
+    }
+    .input{
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-left: 60px;
+    }
+    .espacio{
+        margin-bottom: 10px;
+    }
+    #h2{
+        width: 7%;
+        margin-left: 5%;
+    }
+    .lit{
+        color: white;
+        background-color: #0d1d2c;
+        padding: 10px; 
+        border-radius: 8px;
+    }
+/* } */

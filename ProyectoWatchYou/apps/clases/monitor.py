@@ -1,3 +1,4 @@
+from apps.estados.models import EstadoServidor
 import pyttsx3
 import platform
 import subprocess
@@ -7,14 +8,11 @@ from apps.clases.send_mail import Email
 from datetime import datetime
 from pyttsx3 import engine
 from apps.servidores.models import Servidor
+from apps.estados.models import Estado
 
 
 class Monitor:
 	def __init__(self):
-		
-		# self.host = Servidor.objects.all()
-	# 	self.idserver = ""
-	# 	#self.host = ['www.google.com']
 		pass
 	
 	def ping(self,idserver=""):
@@ -29,12 +27,24 @@ class Monitor:
 
 			nombre = self.host.nombre_servidor
 			if p.poll():
-					print(nombre+" is Down")
+					status = ": is Down"
+					print(nombre+status)
 					stat = False
+					server = EstadoServidor(
+						servidores=self.host,
+						estados = Estado.objects.get(id = 2)
+					)
+					server.save()
 			else:
-				print(nombre+" is Up")
+				status = ": is Up"
+				print(nombre+status)
 				print(nombre)
 				stat = True
+				server = EstadoServidor(
+					servidores=self.host,
+					estados = Estado.objects.get(id = 1)
+				)
+				server.save()
 
 			return stat
 		else:
@@ -76,10 +86,13 @@ class Validar:
 			self.engine.say("Funciona")
 			self.engine.runAndWait()
 
+
+
 		else:
 			print("Equipo Caido")
 			self.engine.say("Hubo un fallo")
 			self.engine.runAndWait()
+
 
 		return self
 
