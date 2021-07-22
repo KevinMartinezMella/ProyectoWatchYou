@@ -8,7 +8,6 @@ class Estado(models.Model):
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    # servidor = models.ForeignKey(Servidor,related_name="estado",on_delete=models.CASCADE)
     estados_servidores = models.ManyToManyField(Servidor, through='EstadoServidor')
     def __repr__(self):
         return self.estado

@@ -17,9 +17,6 @@ def crear(request,data):
         servidor.save()
         servidor.usuario.add(usuario)
 
-# def read(request):
-#     data = Servidor.objects.all()
-#     return data
 
 def update(request,idserver):
     get_server = Servidor.objects.get(id=idserver)

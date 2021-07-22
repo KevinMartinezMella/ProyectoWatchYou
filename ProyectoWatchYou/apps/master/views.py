@@ -1,5 +1,4 @@
-from apps.estados.models import EstadoServidor
-from apps.estados.models import Estado
+from apps.estados.models import EstadoServidor,Estado
 from django.http import request
 from django.http.response import HttpResponse
 from django.shortcuts import redirect, render
@@ -36,11 +35,14 @@ def dashboard(request):
         usuario_actual = request.session["nombre"]
         user_actual = usuario_actual.upper()
         usuario = Usuario.objects.get(id = request.session['id'])
-        print(usuario.servidores.all())
-        # servers = read(request)
+        estados = EstadoServidor.objects.all()
+        data = []
+        for estado in estados:
+            data.append(estado.estados)
         context = {
             "usuario_actual": user_actual,
-            "servers":usuario.servidores.all()
+            "servers": usuario.servidores.all(),
+            "estados": data
         }
         return render(request, 'dashboard.html', context)
     else:
@@ -54,6 +56,7 @@ def devices(request):
         context = {
             "usuario_actual": user_actual,
             "servers": usuario.servidores.all(),
+            
         }
         return render(request,'devices.html', context)
     else:
