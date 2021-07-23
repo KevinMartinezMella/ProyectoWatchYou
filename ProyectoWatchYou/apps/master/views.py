@@ -42,7 +42,8 @@ def dashboard(request):
         context = {
             "usuario_actual": user_actual,
             "servers": usuario.servidores.all(),
-            "estados": data
+            "estados": data,
+            "estadisticas": estados
         }
         return render(request, 'dashboard.html', context)
     else:
@@ -56,7 +57,7 @@ def devices(request):
         context = {
             "usuario_actual": user_actual,
             "servers": usuario.servidores.all(),
-            
+
         }
         return render(request,'devices.html', context)
     else:
