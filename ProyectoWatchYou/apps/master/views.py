@@ -28,6 +28,9 @@ def index(request):
             request.session['nombre'] = usuario.nombre
             return redirect("/dashboard")
 
+
+
+
 def nuevo_srv(request):
     context={
         "nombre":request.POST['servidor'],
