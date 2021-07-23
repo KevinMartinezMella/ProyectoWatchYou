@@ -3,7 +3,7 @@ function crearGrafico(estados){
     estados = estados.substring(1, estados.length -1).split(', ');
     let up = 0;
     let down = 0;
-    console.log(estados)
+    // console.log(estados)
 
     for(let i = 0; i < estados.length; i++){
         if (estados[i] == "isUp"){
@@ -15,7 +15,7 @@ function crearGrafico(estados){
     }  
     let datos = [up,down];
     
-    console.log(datos)
+    // console.log(datos)
     
     const data = {
     labels: [

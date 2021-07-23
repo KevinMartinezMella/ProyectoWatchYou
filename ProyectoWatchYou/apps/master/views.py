@@ -10,6 +10,7 @@ from apps.schedules.views import agregarSchedule
 from datetime import datetime, timezone
 import threading
 from django.views.decorators.csrf import csrf_exempt
+import json
 
 
 # Create your views here.
@@ -36,6 +37,12 @@ def dashboard(request):
         user_actual = usuario_actual.upper()
         usuario = Usuario.objects.get(id = request.session['id'])
         estados = EstadoServidor.objects.all()
+        newservers = {}
+        for server in usuario.servidores.all():
+            newservers[server.nombre_servidor] = []
+            for e in server.estados.all():
+                newservers[server.nombre_servidor].append(e.estados.estado)
+        print(newservers)
         data = []
         for estado in estados:
             data.append(estado.estados)
@@ -43,7 +50,8 @@ def dashboard(request):
             "usuario_actual": user_actual,
             "servers": usuario.servidores.all(),
             "estados": data,
-            "estadisticas": estados
+            "estadisticas": estados,
+            "newservers": json.dumps(newservers)
         }
         return render(request, 'dashboard.html', context)
     else:
