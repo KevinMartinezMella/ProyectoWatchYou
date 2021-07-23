@@ -27,26 +27,7 @@ def index(request):
             request.session['usuario'] = usuario.email
             request.session['nombre'] = usuario.nombre
             return redirect("/dashboard")
-        else:
-            return redirect("/")
-
-def dashboard(request):
-    if request.method == "GET" and "usuario" in request.session:
-        usuario_actual = request.session["nombre"]
-        user_actual = usuario_actual.upper()
-        usuario = Usuario.objects.get(id = request.session['id'])
-        estados = EstadoServidor.objects.all()
-        data = []        
-        for estado in estados:
-            data.append(estado.estados)
-        context = {
-            "usuario_actual": user_actual,
-            "estados": usuario.servidores.all(),
-        }
-        return render(request, 'dashboard.html', context)
-    else:
-        return redirect("/")
-
+        
 def devices(request):
     if request.method == "GET" and "usuario" in request.session:
         usuario_actual = request.session["nombre"]
