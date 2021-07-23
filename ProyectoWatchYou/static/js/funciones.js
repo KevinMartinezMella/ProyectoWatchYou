@@ -42,28 +42,6 @@ function crearGrafico(estados){
       config
     );
 }
-// function cargarDatos(){
-//     datos = ;
-//     // for(let i = 0; i < arr.lenght; i++){
-//     //     for(let i = 0; i < 3; i++){
-//     //         datos.push(Math.floor(Math.random() *3))
-//     // }
-//     return datos;
-// }
-
-// function traerDatos(){
-//     alert('hola')
-//     var request = new Request('/datos',{method: 'GET'});
-//     return request     
-// }
-
-
-// window.onload = function(){
-//     var contenedor = document.getElementById('contenedor_carga')
-//     contenedor.style.visibility = 'hidden';
-//     contenedor.style.opacity = '0';
-
-// }
 
 function carga(){
 setTimeout(function(){
