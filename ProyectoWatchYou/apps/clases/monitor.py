@@ -66,9 +66,6 @@ class Monitor:
 					stat = True
 
 			return stat
-	
-# ejecutar = Monitor()
-# ejecutar.ping()
 
 class Validar:
 
@@ -99,6 +96,3 @@ class Validar:
 
 
 		return self
-
-# realizar_validacion = Validar()
-# realizar_validacion.verificar()
