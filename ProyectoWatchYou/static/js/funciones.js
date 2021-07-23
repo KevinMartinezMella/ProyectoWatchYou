@@ -4,6 +4,7 @@ function crearGrafico(estados){
     let up = 0;
     let down = 0;
     console.log(estados)
+
     for(let i = 0; i < estados.length; i++){
         if (estados[i] == "isUp"){
             up++;
@@ -15,6 +16,7 @@ function crearGrafico(estados){
     let datos = [up,down];
     
     console.log(datos)
+    
     const data = {
     labels: [
         'OK',
@@ -76,43 +78,3 @@ setTimeout(function(){
 
     }, 3000)
 }
-
-
-
-
-function video(){
-(function () {
-
-    var bv = new Bideo();
-    bv.init({
-      // Video element
-      videoEl: document.querySelector('#background_video'),
-  
-      // Container element
-      container: document.querySelector('body'),
-  
-      // Resize
-      resize: true,
-  
-      // autoplay: false,
-  
-      // Array of objects containing the src and type
-      // of different video formats to add
-      src: [
-        {
-          src: 'https://vjs.zencdn.net/v/oceans.mp4',
-          type: 'video/mp4'
-        },
-        {
-          src: 'https://vjs.zencdn.net/v/oceans.webm',
-          type: 'video/webm;codecs="vp8, vorbis"'
-        }
-      ],
-  
-      // What to do once video loads (initial frame)
-      onLoad: function () {
-        document.querySelector('#video_cover').style.display = 'none';
-      }
-    });
-  }());
-} 

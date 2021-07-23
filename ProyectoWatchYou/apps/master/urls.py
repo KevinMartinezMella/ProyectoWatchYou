@@ -14,5 +14,6 @@ urlpatterns=[
     path('edit/<int:idserver>',views.edit,name='edit'),
     path('programar',views.programar,name='programar'),
     path('probar',views.multiThread,name='probar'),
+    path('menu',views.menu, name='menu')
     # path('datos', views.datos, name='datos'),
 ]
