@@ -7,25 +7,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
-    <link rel="icon" type="image/ico" href="{% static 'img/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/ico" href="{% static 'img/WAtchU BlueDark Logo.png' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="{% static 'js/funciones.js' %}" ></script>
     <title>Watch You</title>
 </head>
-<body>
-    <div class="container" id="head">
-        <img src="{%static 'img/WatchU_bluedark.png'%}" alt="imagen de login">
-        <form action="" method="POST" id="login">
-            {% csrf_token %}
-            <h3>Log in</h3>
-            <label for="email">Email</label>
-            <br>
-            <input class="input" type="text" name="email" id="email" placeholder="Ingresa tu email" required="required">
-            <br>
-            <label for="pw">Password</label>
-            <br>
-            <input class="input" type="password" name="pw" id="pw" placeholder="ingresa tu contraseña" required="required">
-            <br>
-            <input class="btn btn-danger" type="submit" id="sub" value="Log in">
-        </form>
+<body onload="carga()">
+    <div id="contenedor_carga">
+        <img id="logowatch" src="../static/img/Watchugif.gif" alt="">
+        <div id="carga"></div>
     </div>
+    <video id="background_video" loop muted></video>
+    <div id="video_cover"></div>
+    <div id="overlay"></div>
+    <section id="main_content">
+        <div id="head">
+
+        </div>
+        <!-- <div class="container" id="head"> -->
+            <!-- <img src="{%static 'img/WatchU_bluedark.png'%}" alt="imagen de login"> -->
+        <div id="formulario">
+            <form action="" method="POST" id="login">
+                {% csrf_token %}
+                <h3>Log in</h3>
+                <label for="email">Email</label>
+                <br>
+                <input class="input" type="text" name="email" id="email" placeholder="Ingresa tu email" required="required">
+                <br>
+                <label for="pw">Password</label>
+                <br>
+                <input class="input" type="password" name="pw" id="pw" placeholder="ingresa tu contraseña" required="required">
+                <br>
+                <input class="btn btn-danger" type="submit" id="sub" value="Log in">
+            </form>
+            <span> WatchYou</span>
+        </div>    
+        <!-- </div> -->
+        <div id="links">
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <!-- <a href="#"><img id="was" src="../static/img/was.png" alt=""></a> -->
+        </div>
+        <!-- <div id="footer"><p id="pie">WatchYou ® 2021</p></div> -->
+      </section>
+
+    <script src="{% static 'js/bideo.js' %}" ></script>
+    <script src="{% static 'js/main.js' %}" ></script>
 </body>
 </html>

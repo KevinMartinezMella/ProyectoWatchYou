@@ -3,16 +3,25 @@
     padding: 0;
     color: white;
 }
-body{
-    background: url('../img/background.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
 h3{
     text-align: center;
     margin-top: 10%;
+    font-family: 'Bebas Neue';
+
+}
+span{
+    font-family: 'Bebas Neue';
+    font-size: 200px;
+    vertical-align: top;
+    margin-left: 100px;
+}
+form{
+    display: inline-block;
+}
+#formulario{
+    width: 1500px;
+    vertical-align: top;
+    display: inline-block;
 }
 img{
     width: 20%;
@@ -22,23 +31,29 @@ img{
 }
 #login{
     border: solid 1px black;
-    background-color: #0d1d2c;
+    background-color: #0d1d2ca4;
     width: 40%;
     height: 400px;
     border-radius: 20px;
 }
 #login label,input{
     width: 70%;
-    margin-left: 15%;
     margin-top: 1%;
+    font-family: 'Bebas Neue';
+
 }
+#pie{
+    margin-top: 50px;
+}
+/* #was{
+    width: 20px;
+} */
 #sub{
     margin-top: 10%;
     color: white;
     border-radius: 10px;
     background-color: red;
     width: 40%;
-    margin-left: 30%;
 }
 .input{
     padding: 10px;
@@ -49,4 +64,51 @@ img{
 }
 #pw{
     color: black;
+}
+/*------------------------------------CARGA----------------------------------------------------*/
+#contenedor_carga{
+    background-color: rgba(13,29,44,1);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    z-index: 10000;
+}
+#carga{
+    border: 5px solid #ccc;
+    border-top-color:#F4266A ;
+    border-top-style: groove ;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 250px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    -webkit-animation: girar 1.5s linear infinite ;
+    -o-animation: girar 1.5s linear infinite;
+    animation: girar 1.5s linear infinite;
+} 
+
+@keyframes girar {
+    from { transform: rotate(0deg);}
+    to { transform: rotate(360deg);}
+}
+#logowatch{
+    width: 150px;
+     /* border-radius: 100%; */
+    border: 1px solid white;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
 }

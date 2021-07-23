@@ -16,4 +16,3 @@ class EstadoServidor(models.Model):
     fechahora = models.DateTimeField(auto_now_add=True)
     servidores = models.ForeignKey(Servidor, related_name="estados", on_delete=models.CASCADE)
     estados = models.ForeignKey(Estado, related_name="servidores", on_delete=models.CASCADE)
-    usuario = models.ForeignKey(Usuario, related_name="status", on_delete=models.CASCADE)

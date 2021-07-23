@@ -112,3 +112,6 @@ def cerrar(request):
     del request.session['usuario']
     del request.session['id']
     return redirect("/")
+
+def menu(request):
+    return render(request, "menu.html")
