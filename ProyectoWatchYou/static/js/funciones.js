@@ -26,10 +26,6 @@ function crearGrafico(estados){
         backgroundColor: [
         'rgb(54, 162, 85)'/*verde*/,
         'rgb(255, 34, 36)'/*rojo*/,
-        // 'rgb(255, 205, 86)',
-        // 'rgb(155, 20, 86)',
-        // 'rgb(175, 205, 20)'
-
 
         ],
         hoverOffset: 4
