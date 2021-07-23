@@ -17,6 +17,5 @@ class EstadoServidor(models.Model):
     servidores = models.ForeignKey(Servidor, related_name="estados", on_delete=models.CASCADE)
     estados = models.ForeignKey(Estado, related_name="servidores", on_delete=models.CASCADE)
     
-    
     def __repr__(self):
         return self.estados.estado
