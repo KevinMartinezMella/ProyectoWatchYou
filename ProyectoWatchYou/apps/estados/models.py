@@ -6,7 +6,6 @@ from apps.usuarios.models import Usuario
 # Create your models here.
 class Estado(models.Model):
     estado = models.CharField(max_length=255,blank=False,null=False)
-    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     estados_servidores = models.ManyToManyField(Servidor, through='EstadoServidor')
