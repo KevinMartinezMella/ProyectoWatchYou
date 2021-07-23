@@ -37,6 +37,8 @@ def dashboard(request):
         usuario = Usuario.objects.get(id = request.session['id'])
         estados = EstadoServidor.objects.all()
         data = []
+
+        
         for estado in estados:
             data.append(estado.estados)
         context = {
