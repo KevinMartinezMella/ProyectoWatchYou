@@ -27,20 +27,6 @@ def index(request):
             request.session['usuario'] = usuario.email
             request.session['nombre'] = usuario.nombre
             return redirect("/dashboard")
-        
-def devices(request):
-    if request.method == "GET" and "usuario" in request.session:
-        usuario_actual = request.session["nombre"]
-        usuario = Usuario.objects.get(id = request.session['id'])
-        user_actual = usuario_actual.upper()
-        context = {
-            "usuario_actual": user_actual,
-            "servers": usuario.servidores.all(),
-
-        }
-        return render(request,'devices.html', context)
-    else:
-        return redirect("/")
 
 def nuevo_srv(request):
     context={
