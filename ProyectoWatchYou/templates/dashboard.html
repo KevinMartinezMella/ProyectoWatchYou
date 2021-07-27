@@ -27,13 +27,6 @@
         <div id="carga"></div>
     </div>
     <div id="containers">
-        <!-- {% for server in servers %}
-            <p>{{ server.nombre_servidor }}</p>
-            {% for e in server.estados.all %}
-                <p>------------------------------------</p>
-                <p>{{ e }}</p>
-            {% endfor %}
-        {% endfor %} -->
         <img id="logo" src="{% static 'img/WatchU bluedark.png' %}">
         <div class="inline" id="enlaces">
             <a id="dashboard" class="inline menu" href="/dashboard">DASHBOARD</a>
@@ -54,37 +47,6 @@
                 <div id="canvas" >
                     <canvas class="white" id="myChart"></canvas>
                 </div>
-                <!-- <script>
-                    const data = {
-                    labels: [
-                        'FAIL',
-                        'OK',
-                        'WARNING'
-                    ], 
-                    datasets: [{
-                        label: 'My First Dataset',
-                        data: [2, 2, 1],
-                        backgroundColor: [
-                        'rgb(255, 34, 36)'/*rojo*/,
-                        'rgb(54, 162, 85)'/*azul*/,
-                        'rgb(255, 205, 86)'
-                        ],
-                        hoverOffset: 4
-                    }]
-                    };
-                    const config = {
-                        type: 'pie',
-                        data: data,
-                    };
-                                                                    
-                    var myChart = new Chart(
-                      document.getElementById('myChart'),
-                      config
-                    );
-
-                    
-                </script> -->
-                <!-- <img id="grafico" src="{% static 'img/grafico.png' %}" alt="imagen grafico"> -->
             </div>
             <div id="alarmas" class="inline">
                 <h2>Alerts:</h2>

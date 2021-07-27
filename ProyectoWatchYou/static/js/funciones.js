@@ -10,7 +10,7 @@ function crearGrafico(estados,newservers){
     let colores = []
     for(key in jsonR){
         labels.push(key+ " OK")
-        labels.push(key+ " Fail")
+        labels.push(key+ " FAIL")
         let up = 0
         let down = 0
         for( i of jsonR[key]){
@@ -26,19 +26,12 @@ function crearGrafico(estados,newservers){
             datos.push(down);
         }
     }
-    console.log(labels);
-    console.log(datosDict);
-    for(let i = 0; i < estados.length; i++){
-        if (estados[i] == "isUp"){
-            up++;
-        }
-        else if (estados[i] == "isDown"){
-            down++;
-        } 
-    }  
+    console.log(datosDict)
+    console.log(datos)
+    console.log(labels)
 
     const data = {
-    labels: labels, 
+    labels: labels,
     datasets: [{
         label: 'My First Dataset',
         data: datos,
