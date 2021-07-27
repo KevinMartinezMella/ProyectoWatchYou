@@ -54,3 +54,13 @@ Time: 17:37
 Phone number: +56953485258
 Message: Saludos Jean, se han verificado exitosamente las conexiones con prueba el 14/07/2021:17:34:29 
 --------------------
+Date: 27:7:2021
+Time: 12:21
+Phone number: +56940567702
+Message: Saludos Jean, se han verificado las conexiones con prueba: Esta OK el 27/07/2021:12:19:28 
+--------------------
+Date: 27:7:2021
+Time: 12:22
+Phone number: +56940567702
+Message: Saludos Jean, se han verificado las conexiones con youtube: Esta OK el 27/07/2021:12:20:10 
+--------------------
