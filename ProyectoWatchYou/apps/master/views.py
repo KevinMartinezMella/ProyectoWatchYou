@@ -1,3 +1,4 @@
+from django import http
 from apps.estados.models import EstadoServidor,Estado
 from django.http import request
 from django.http.response import HttpResponse
@@ -31,6 +32,10 @@ def index(request):
         else:
             return redirect("/")
 
+def jsonR(data):
+    print(data)
+    return HttpResponse(json.dumps(data), content_type = "application/json")
+
 def dashboard(request):
     if request.method == "GET" and "usuario" in request.session:
         usuario_actual = request.session["nombre"]
@@ -42,7 +47,6 @@ def dashboard(request):
             newservers[server.nombre_servidor] = []
             for e in server.estados.all():
                 newservers[server.nombre_servidor].append(e.estados.estado)
-        print(newservers)
         data = []
         for estado in estados:
             data.append(estado.estados)
@@ -51,7 +55,7 @@ def dashboard(request):
             "servers": usuario.servidores.all(),
             "estados": data,
             "estadisticas": estados,
-            "newservers": json.dumps(newservers)
+            "newservers": json.dumps(newservers),
         }
         return render(request, 'dashboard.html', context)
     else:

@@ -20,41 +20,20 @@
     
     <title>Dashboard</title>
 </head>
-<body onload="crearGrafico('{{ estados }}'), carga()" >
-    <script>
-    let datos = {}
-    status = JSON.stringify('{{ newservers }}')
-            console.log(status)
+<body onload="crearGrafico('{{ estados }}','{{ newservers }}'),carga()" >
 
-            console.log("HOLA")
-        status2 = JSON.parse('{{ newservers }}')
-            console.log(status2) 
-    {% for server in newservers %}
-        console.log('{{ server }}')
-        console.log('{{ server.estados.all }}')
-        {% for e in server.estados.estado %}
-        status = JSON.stringify(e)
-            console.log(status)
-
-            console.log("HOLA")
-        status2 = JSON.parse(status)
-            console.log(status2) 
-            {{ e.estado }}
-        {% endfor %}
-    {% endfor %}
-    </script>
     <div id="contenedor_carga">
         <img id="logowatch" src="../static/img/Watchugif.gif" alt="">
         <div id="carga"></div>
     </div>
     <div id="containers">
-        {% for server in servers %}
-            <p>{{ server }}</p>
+        <!-- {% for server in servers %}
+            <p>{{ server.nombre_servidor }}</p>
             {% for e in server.estados.all %}
-                <p>Hola</p>
+                <p>------------------------------------</p>
                 <p>{{ e }}</p>
             {% endfor %}
-        {% endfor %}
+        {% endfor %} -->
         <img id="logo" src="{% static 'img/WatchU bluedark.png' %}">
         <div class="inline" id="enlaces">
             <a id="dashboard" class="inline menu" href="/dashboard">DASHBOARD</a>
