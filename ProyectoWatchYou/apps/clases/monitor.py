@@ -66,7 +66,6 @@ class Monitor:
 					stat = True
 
 			return stat
-
 class Validar:
 
 	def __init__(self):

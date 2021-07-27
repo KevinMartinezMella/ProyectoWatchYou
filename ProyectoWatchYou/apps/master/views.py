@@ -1,3 +1,4 @@
+from django import http
 from apps.estados.models import EstadoServidor,Estado
 from django.http import request
 from django.shortcuts import redirect, render
@@ -9,6 +10,7 @@ from apps.schedules.views import agregarSchedule
 from datetime import datetime, timezone
 import threading
 from django.views.decorators.csrf import csrf_exempt
+import json
 
 # Create your views here.
 
@@ -28,20 +30,31 @@ def index(request):
         else:
             return redirect("/")
 
+def jsonR(data):
+    print(data)
+    return HttpResponse(json.dumps(data), content_type = "application/json")
+
 def dashboard(request):
     if request.method == "GET" and "usuario" in request.session:
         usuario_actual = request.session["nombre"]
         user_actual = usuario_actual.upper()
         usuario = Usuario.objects.get(id = request.session['id'])
         estados = EstadoServidor.objects.all()
-        data = []        
+        newservers = {}
+        for server in usuario.servidores.all():
+            newservers[server.nombre_servidor] = []
+            for e in server.estados.all():
+                newservers[server.nombre_servidor].append(e.estados.estado)
+        data = []
         for estado in estados:
             data.append(estado.estados)
         context = {
             "usuario_actual": user_actual,
             "servers": usuario.servidores.all(),
             "estados": data,
-            "estadisticas": estados
+            "estadisticas": estados,
+            "newservers": json.dumps(newservers)
+            ,
         }
         return render(request, 'dashboard.html', context)
     else:

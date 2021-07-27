@@ -20,15 +20,8 @@
     
     <title>Dashboard</title>
 </head>
-<body onload="crearGrafico('{{ estados }}'), carga()" >
-    <!-- <script>
-    let datos = {}
-    {% for server in servers %}
-    console.log('{{ server }}')
-    
-    console.log('{{ server.estados.all }}')
-    {% endfor %}
-    </script> -->
+<body onload="crearGrafico('{{ estados }}','{{ newservers }}'),carga()" >
+
     <div id="contenedor_carga">
         <img id="logowatch" src="../static/img/Watchugif.gif" alt="">
         <div id="carga"></div>
@@ -54,37 +47,6 @@
                 <div id="canvas" >
                     <canvas class="white" id="myChart"></canvas>
                 </div>
-                <!-- <script>
-                    const data = {
-                    labels: [
-                        'FAIL',
-                        'OK',
-                        'WARNING'
-                    ], 
-                    datasets: [{
-                        label: 'My First Dataset',
-                        data: [2, 2, 1],
-                        backgroundColor: [
-                        'rgb(255, 34, 36)'/*rojo*/,
-                        'rgb(54, 162, 85)'/*azul*/,
-                        'rgb(255, 205, 86)'
-                        ],
-                        hoverOffset: 4
-                    }]
-                    };
-                    const config = {
-                        type: 'pie',
-                        data: data,
-                    };
-                                                                    
-                    var myChart = new Chart(
-                      document.getElementById('myChart'),
-                      config
-                    );
-
-                    
-                </script> -->
-                <!-- <img id="grafico" src="{% static 'img/grafico.png' %}" alt="imagen grafico"> -->
             </div>
             <div id="alarmas" class="inline">
                 <h2>Alerts:</h2>

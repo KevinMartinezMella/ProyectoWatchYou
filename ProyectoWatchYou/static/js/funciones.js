@@ -1,27 +1,38 @@
-
-function crearGrafico(estados){ 
+function crearGrafico(estados,newservers){ 
     estados = estados.substring(1, estados.length -1).split(', ');
     let up = 0;
     let down = 0;
-    console.log(estados)
 
-    for(let i = 0; i < estados.length; i++){
-        if (estados[i] == "isUp"){
-            up++;
+    let jsonR = JSON.parse(newservers);
+    let labels = []
+    let datosDict = {}
+    let datos =[]
+    let colores = []
+    for(key in jsonR){
+        labels.push(key+ " OK")
+        labels.push(key+ " FAIL")
+        let up = 0
+        let down = 0
+        for( i of jsonR[key]){
+            if(i=="isUp"){
+                up++;
+            }
+            else if(i=="isDown"){
+                down++;
+            }
+            datosDict[labels[labels.length-2]] = up;
+            datosDict[labels[labels.length-1]] = down;
         }
-        else if (estados[i] == "isDown"){
-            down++;
-        } 
-    }  
-    let datos = [up,down];
-    
+        datos.push(up);
+        datos.push(down);
+    }
+    console.log(jsonR)
+    console.log(datosDict)
     console.log(datos)
-    
+    console.log(labels)
+
     const data = {
-    labels: [
-        'OK',
-        'FAIL',
-    ], 
+    labels: labels,
     datasets: [{
         label: 'My First Dataset',
         data: datos,

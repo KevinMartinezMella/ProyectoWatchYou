@@ -28,6 +28,7 @@ img{
     margin-top: 2%;
     border-radius: 10px;
     margin-bottom: 2%;
+    position: absolute;
 }
 #login{
     border: solid 1px black;
