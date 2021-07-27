@@ -54,23 +54,3 @@ Time: 17:37
 Phone number: +56953485258
 Message: Saludos Jean, se han verificado exitosamente las conexiones con prueba el 14/07/2021:17:34:29 
 --------------------
-Date: 27:7:2021
-Time: 10:44
-Phone number: +56953485258
-Message: Saludos Jean, se han verificado exitosamente las conexiones con facebook: Esta OK el 27/07/2021:10:43:07 
---------------------
-Date: 27:7:2021
-Time: 11:6
-Phone number: +56953485258
-Message: Saludos Jean, se han verificado exitosamente las conexiones con servidor x: Esta OK el 27/07/2021:11:05:12 
---------------------
-Date: 27:7:2021
-Time: 11:11
-Phone number: +56953485258
-Message: Saludos Jean, se han verificado exitosamente las conexiones con falla: ESTA CAIDO el 27/07/2021:11:09:16 
---------------------
-Date: 27:7:2021
-Time: 11:46
-Phone number: +56953485258
-Message: Saludos Jean, se han verificado exitosamente las conexiones con facebook: Esta OK el 27/07/2021:11:44:31 
---------------------

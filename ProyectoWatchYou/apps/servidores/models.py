@@ -9,6 +9,5 @@ class Servidor(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     usuario = models.ManyToManyField(Usuario, related_name='servidores')
-
     def __str__(self):
         return f'{self.ip}'

@@ -3,7 +3,7 @@ from datetime import datetime
 class Msg:
     def __init__(self):
         self.now = datetime.now()
-        self.numero = "953485258"
+        self.numero = "940567702"
 
     def mensaje(self,input):
         host = str(input)

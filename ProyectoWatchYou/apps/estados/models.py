@@ -1,6 +1,7 @@
 from os import name
 from django.db import models
 from apps.servidores.models import Servidor
+from apps.usuarios.models import Usuario
 
 # Create your models here.
 class Estado(models.Model):
