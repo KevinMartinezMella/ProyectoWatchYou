@@ -55,7 +55,8 @@ def dashboard(request):
             "servers": usuario.servidores.all(),
             "estados": data,
             "estadisticas": estados,
-            "newservers": json.dumps(newservers),
+            "newservers": json.dumps(newservers)
+            ,
         }
         return render(request, 'dashboard.html', context)
     else:

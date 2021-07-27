@@ -4,7 +4,7 @@ import platform
 import subprocess
 import os as op
 from apps.clases.send_mail import Email
-#from apps.clases.send_wsp import Msg
+from apps.clases.send_wsp import Msg
 from datetime import datetime
 from pyttsx3 import engine
 from apps.servidores.models import Servidor
@@ -67,9 +67,6 @@ class Monitor:
 
 			return stat
 	
-# ejecutar = Monitor()
-# ejecutar.ping()
-
 class Validar:
 
 	def __init__(self):
@@ -80,9 +77,9 @@ class Validar:
 		if isUp:
 			print("Equipos operativos")
 			new_email = Email()
-			new_email.sendMail(str(nombre)+" Is Up")
-			#new_message = Msg()
-			#new_message.mensaje(nombre)
+			new_email.sendMail(str(nombre)+" Esta ok")
+			new_message = Msg()
+			new_message.mensaje(nombre+ ": Esta OK")
 			self.engine.say("Funciona")
 			self.engine.runAndWait()
 
@@ -90,11 +87,12 @@ class Validar:
 
 		else:
 			print("Equipo Caido")
+			new_email = Email()
+			new_email.sendMail(str(nombre)+" ESTA CAIDO")
+			new_message = Msg()
+			new_message.mensaje(nombre+ ": ESTA CAIDO")
 			self.engine.say("Hubo un fallo")
 			self.engine.runAndWait()
 
 
 		return self
-
-# realizar_validacion = Validar()
-# realizar_validacion.verificar()

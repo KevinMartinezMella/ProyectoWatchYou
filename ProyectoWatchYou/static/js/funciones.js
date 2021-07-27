@@ -22,10 +22,11 @@ function crearGrafico(estados,newservers){
             }
             datosDict[labels[labels.length-2]] = up;
             datosDict[labels[labels.length-1]] = down;
-            datos.push(up);
-            datos.push(down);
         }
+        datos.push(up);
+        datos.push(down);
     }
+    console.log(jsonR)
     console.log(datosDict)
     console.log(datos)
     console.log(labels)
