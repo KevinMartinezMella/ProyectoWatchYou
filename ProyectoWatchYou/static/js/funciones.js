@@ -26,10 +26,6 @@ function crearGrafico(estados,newservers){
         datos.push(up);
         datos.push(down);
     }
-    console.log(jsonR)
-    console.log(datosDict)
-    console.log(datos)
-    console.log(labels)
 
     const data = {
     labels: labels,

@@ -64,3 +64,13 @@ Time: 12:22
 Phone number: +56940567702
 Message: Saludos Jean, se han verificado las conexiones con youtube: Esta OK el 27/07/2021:12:20:10 
 --------------------
+Date: 29:7:2021
+Time: 11:48
+Phone number: +56940567702
+Message: Saludos Jean, se han verificado las conexiones con google: Esta OK el 29/07/2021:11:46:21 
+--------------------
+Date: 29:7:2021
+Time: 11:59
+Phone number: +56940567702
+Message: Saludos Jean, se han verificado las conexiones con facebook: Esta OK el 29/07/2021:11:57:37 
+--------------------

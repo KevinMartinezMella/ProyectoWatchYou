@@ -160,8 +160,8 @@
                     {% for data in servers %}
                       <tr>
                           <td class="white" >{{data.nombre_servidor}}</td>
-                          <td class="white" >{{data.updated_at}}</td>
-                          <td class="white" >OK</td>
+                          <td class="white" >{{data.estados.all.0.fechahora}}</td>
+                          <td class="white" >{{data.estados.all.0.estados.estado}}</td>
                           <td class="white" ><a href="/delete/{{data.id}}">DELETE</a> |
                              <!-- <a href="/edit/{{data.id}}">EDIT</a> -->
                              <a href="" type="button" data-toggle="modal" data-target="#editarModal">
